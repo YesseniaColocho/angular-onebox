@@ -1,0 +1,32 @@
+.card{
+    border: grey solid 2px;
+    >*{
+        padding: 0 10px;
+    }
+    .image{
+        padding: 0;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    button{
+        width: 100%;
+        background-color: var(--red);
+        height: 40px;
+        color: white;
+        font-weight: bold;
+        border: none;
+    }
+    .title{
+        color: var(--red);
+        font-size: large;
+        text-transform: uppercase;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    .subtitle{
+        color: var(--red);
+        font-size: small;
+    }
+}
