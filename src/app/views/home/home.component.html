@@ -1,8 +1,5 @@
 <section class="wrapper">
-    <div class="grid">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-    </div>
+  <div class="grid">
+    <app-card *ngFor="let evento of eventos" [evento]="evento"></app-card>
+  </div>
 </section>
