@@ -1,13 +1,15 @@
 <section class="card">
-  <h1 class="title">Lady Gaga</h1>
-  <h2 class="subtitle">Coachella</h2>
-  <div class="image" >
-    <img src="/assets/img/sample-image.jpg" />
+  <div>
+    <h1 class="title">{{ evento.title }}</h1>
+    <h2 class="subtitle">{{ evento.subtitle }}</h2>
+    <div class="image">
+      <img src="{{ evento.image }}" />
+    </div>
+    <span class="date"
+      >{{ formatDate(evento.startDate) }} -
+      {{ formatDate(evento.endDate) }}</span
+    >
+    <p class="text" [innerHTML]="evento.description"></p>
   </div>
-  <span class="date"> 01/10/2015 - 30/11/2015 </span>
-  <p class="text">`pekgprwhjreophjyptèr jhèrtjh`te</p>
-
-  <button>
-    Comprar
-  </button>
+  <button><a routerLink="/shopping-cart">Comprar</a></button>
 </section>

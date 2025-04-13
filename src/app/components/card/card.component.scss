@@ -1,32 +1,44 @@
-.card{
-    border: grey solid 2px;
-    >*{
-        padding: 0 10px;
+.card {
+  border: grey solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  > div > * {
+    padding: 0 10px;
+  }
+  div > .image {
+    padding: 0;
+    img {
+      width: 100%;
+      height: auto;
     }
-    .image{
-        padding: 0;
-        img{
-            width: 100%;
-            height: auto;
-        }
+  }
+  button {
+    width: 100%;
+    background-color: var(--red);
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
     }
-    button{
-        width: 100%;
-        background-color: var(--red);
-        height: 40px;
-        color: white;
-        font-weight: bold;
-        border: none;
-    }
-    .title{
-        color: var(--red);
-        font-size: large;
-        text-transform: uppercase;
-        margin-top: 10px;
-        margin-bottom: 0;
-    }
-    .subtitle{
-        color: var(--red);
-        font-size: small;
-    }
+  }
+  .title {
+    color: var(--red);
+    font-size: large;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    color: var(--red);
+    font-size: small;
+  }
 }
