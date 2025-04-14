@@ -5,7 +5,7 @@ Ejercicio de lectura de JSONs para mostrar datos de eventos. Incluye un carrito 
 Usa el modelo Ruta > Vista > Componente, un uso algo limitado de la estrategia de detección de cambios OnPush vinculado al uso de hhtpClient para obtener la información de los JSON mediante subscripción, componentes que usan el principio SOLID, manteniendolos lo más independientes de la lógica de la vista, entre otras pequeñas features más.
 
 Una github page con el proyecto construido se encuentra aquí:
-(https://github.com/YesseniaColocho/angular-onebox)
+https://github.com/YesseniaColocho/angular-onebox
 
 ## Documentación de Angular original:
 
