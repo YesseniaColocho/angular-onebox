@@ -59,7 +59,6 @@ export class ShoppingCartComponent {
   }
 
   addSession(id:string, date: string, sum:number) {
-    console.log(id, date, sum)
     let modifiedSession = this.sessions.find((session:any) => session.date === date)
     let event = this.eventInfo.event
 
@@ -76,12 +75,10 @@ export class ShoppingCartComponent {
         modifiedSession.quantity = parseInt(modifiedSession.availability)
       
     
-      console.log(modifiedSession)
     this.cartEvents = modifySession(event, date, modifiedSession.quantity)
   }
 
   removeSession(payload: any) {
-    console.log(payload.id)
     this.addSession(payload.id, payload.date, -1)
   }
 

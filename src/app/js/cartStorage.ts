@@ -7,7 +7,6 @@ export function getCart() {
 }
 
 export function modifySession(event: any, date: string, quantity: number) {
-    console.log()
     const eventsCart = getCart()
     if(!eventsCart[event.id]) eventsCart[event.id] = {event, sessions: [{date, quantity}]}
     else if(quantity > 0) {
