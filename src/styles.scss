@@ -1,7 +1,31 @@
-:root{
-    --red:rgb(216, 14, 14);
+:root {
+  --red: rgb(216, 14, 14);
 }
-body{
-    margin: 0;
-    font-family: Helvetica, sans-serif;
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,31 @@
+<section class="wrapper">
+  <div class="grid">
+    <div class="buy-section">
+      <h2 *ngIf="eventInfo">{{ eventInfo.event.title }}</h2>
+      <div *ngIf="error">
+        {{ error }}
+      </div>
+      <div *ngFor="let session of sessions" class="session">
+        <div>
+          Fecha: <span>{{ formatDate(session.date) }}</span
+          >, Disponibilidad: <span>{{ session.availability }}</span>
+        </div>
+        <div class="selector">
+          <button (click)="addSession(eventInfo.event.id, session.date, -1)">
+            -
+          </button>
+          <span>{{ session.quantity }}</span>
+          <button (click)="addSession(eventInfo.event.id, session.date, 1)">
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <app-cart
+        [events]="cartEvents"
+        (remove)="removeSession($event)"
+      ></app-cart>
+    </div>
+  </div>
+</section>

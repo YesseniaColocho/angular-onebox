@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { formatDate } from 'src/app/utils/helpers';
 
 @Component({
   selector: 'app-card',
@@ -6,9 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-@Input() evento: any
+  @Input() evento: any
 
-formatDate(fecha: string){
-  return new Date(parseInt(fecha)).toLocaleDateString()
-}
+  formatDate(date: string) {
+    return formatDate(date)
+  }
 }

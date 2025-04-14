@@ -1,0 +1,21 @@
+<section *ngIf="eventsArray.length > 0">
+  <div class="event" *ngFor="let event of eventsArray">
+    <h2>{{ event.event.title }}</h2>
+    <div class="sessions">
+      <div class="session" *ngFor="let session of event.sessions">
+        <div class="session-info">
+          <span>{{ formatDate(session.date) }}</span>
+        </div>
+        <div>
+          <span>x{{ session.quantity }}</span>
+          <button
+            (click)="removeSession(event.event.id, session.date)"
+            class="trash-button"
+          >
+            <img src="/assets/img/trash.png" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
