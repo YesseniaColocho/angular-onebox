@@ -1,22 +1,19 @@
-name: Build and Deploy
 on:
   push:
     branches:
-      - master
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - name: All things angular
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@[version] ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
-        with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }} # see the Configuration section for how you can create secrets
-          build_configuration: staging # The build environment for the app. please look configurations in your angular.json
-          base_href: /angular-onebox/ # make sure this corresponds to https://<your_username>.github.io/<base_href>/
-          deploy_branch: gh-pages # The branch the action should deploy to.
-          angular_dist_build_folder: dist/angular-onebox # The folder where your project is supposed to be after running ng build by the action.
+      - "main" # change to the branch you wish to deploy from
 
 permissions:
-  contents: write # Allow write permission to GITHUB_TOKEN to commit to deploy branch.
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - id: build-publish
+        uses: bitovi/github-actions-angular-to-github-pages@v1.0.0
+        with:
+          path: dist/${{ github.event.repository.name }}/browser # default
+          build_command: npm run build -- --base-href=/${{ github.event.repository.name }}/ # default
